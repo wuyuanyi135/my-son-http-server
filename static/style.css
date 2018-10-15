@@ -1,0 +1,40 @@
+.form div {
+    height: 50px;
+}
+
+#button_submit {
+    width: 33%;
+    display: block;
+    margin: auto;
+}
+
+body {
+    width: 100%;
+}
+
+.form {
+    background-color: #fafafa;
+    margin:auto;
+    border-color: red;
+    border-style: double;
+    text-align: center;
+    width:30%;
+    padding: 30px;
+}
+
+tr td:first-child {
+    text-align: right;
+    width: 50%;
+}
+tr td:nth-child(2) {
+    text-align: left;
+}
+
+.form-table {
+    text-align: center;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+}

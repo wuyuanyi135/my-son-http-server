@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VSB</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./jquery.js"></script>
+</head>
+
+<body>
+    <form id="mainform" class="form" method="POST" name="mainform">
+        <div>
+            <label for="file">File to upload: </label>
+            <input name="file" type="file" />
+        </div>
+        <div>
+            <label for="data">Extra data:</label>
+            <input name="data" type="text" />
+        </div>
+        <div>
+            <button type="submit" id="button_submit">Submit</button>
+        </div>
+    </form>
+    <script>
+        $(document).ready(() => {
+            $("#mainform").on("submit", (e) => {
+                console.log("Submit!");
+                var formData = new FormData(e.target);
+                $.ajax({
+                    type: "POST",
+                    contentType: false,
+                    url: "/upload?data=test",
+                    cache: false,
+                    data: formData, // serializes the form's elements.
+                    processData: false,
+                    success: function (data) {
+                        alert(data); // show response from the php script.
+                    }
+                });
+                e.preventDefault()
+            })
+        });
+    </script>
+</body>
+
+</html>
